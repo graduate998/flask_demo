@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap-4.2.1/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='bootstrap-4.2.1/js/bootstrap.min.js')}}">
+
+</head>
+<body>
+<div class="container mt-3" style="width:600px">
+<form method="post">
+    {{ form.csrf_token() }}
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label">{{ form.sno.label }}</div><div class="col-auto">{{ form.sno }}</div></div>
+    <div class="form-group row">
+        <div class="col-sm-3 col-form-label">{{ form.sid.label }}</div><div class="col-auto">{{ form.sid }}</div></div>
+     <div class="form-group row">
+         <div class="col-sm-3 col-form-label">{{ form.sname.label }}</div><div class="col-auto">{{ form.sname }}</div></div>
+     <div class="form-group row">
+         <div class="col-sm-3 col-form-label">{{ form.ssex.label }}</div><div class="col-auto">{{ form.ssex }}</div></div>
+     <div class="form-group row">
+         <div class="col-sm-3 col-form-label">{{ form.sbirth.label }}</div><div class="col-auto">{{ form.sbirth }}</div></div>
+     <div class="form-group row">
+         <div class="col-sm-3 col-form-label">{{ form.sdept.label }}</div><div class="col-auto">{{ form.sdept }}</div></div>
+{#     <div class="form-group row">#}
+{#         <div class="col-sm-3 col-form-label">{{ form.sspecial.label }}</div><div class="col-auto">{{ form.sspecial }}</div></div>#}
+     <div class="form-group row">
+         <div class="col-sm-3 col-form-label">{{ form.sclass.label }}</div><div class="col-auto">{{ form.sclass }}</div></div>
+    <div class="form-group row">
+         <div class="col-auto">{{ form.submit }}</div></div>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+
+</form>
+
+</div>
+</div>
+</body>
+</html>
